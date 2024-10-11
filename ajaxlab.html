@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+     <meta charset='UTF-8'>
+     <title>Insert title here</title>
+     <style>
+     table {
+        border-collapse: collapse;
+        width: 100%;
+        border: 1px solid black;
+     } 
+
+     td {
+        border: 1px solid black;
+        padding-left : 5px;
+     }
+     </style>
+     <script>	
+     window.onload = function() {
+ 			const xhr = new XMLHttpRequest();
+ 		xhr.addEventListener("load", function() {
+ 			document.getElementsByTagName('div')[0].textContent = xhr.responseText;
+ 		});
+ 		기준시간: xhr.open('GET', 'content/weather.jsp', true);
+ 		xhr.send(); 		
+ 	};
+		
+     </script>
+    </head>
+    <body>
+        <h1 style="text-align : center">오늘의 날씨 정보-비</h1>
+        <hr>
+        <img src="images/cloud.png">
+        <div id="output" style="width:350px; margin : 10px auto"></div>
+
+
+    </body>
+</html>
